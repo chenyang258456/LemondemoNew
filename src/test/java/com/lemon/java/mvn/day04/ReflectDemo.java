@@ -42,8 +42,9 @@ public class ReflectDemo {
                String studentElementName = element.getName();
                //根据获取到的标签名拼接为Student内的方法名
                studentElementName= "set"+studentElementName;
-               //根据方法名获取方法，传入参数类型：String.class
-               Method method = clazz.getMethod(studentElementName,String.class);
+               //根据方法名获取方法，传入参数类型：String.class获取方法对象
+               Method method = clazz.getMethod(studentElementName);
+
                //执行方法，将标签内容作为参数传递给该方法
                method.invoke(student,element.getText());
            }
